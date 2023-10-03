@@ -21,39 +21,43 @@ export default function Home() {
     <main>
 
 
-       <h3 className='text-center my-5'>Dog Care</h3>
+       <h3 className='text-center mt-5 mb-3'>Looking for Dog Care</h3>
 
-       <p>
+       <p className='about'>
         I am in search of a dedicated dog caregiver for my two Siberian Huskies. It&apos;s paramount that this individual is responsible and trustworthy, as these dogs are like family to me. A genuine love for animals is a must, as it&apos;s important that my dogs are treated with affection and care. Additionally, it&apos;s essential that the potential caregiver has prior experience with dogs, ensuring that they understand the unique needs and behaviors of canines. The safety and well-being of my Huskies are of utmost importance, and I am keen on finding someone who will care for them as if they were their own.
        </p>
 
      
-       <div className="dogs">
+       <div className="dogs ">
         
-             <div className="card" style={{ width: '18rem' }}>
-              <img src="..." class="card-img-top" alt="..."/>
+             <div className="card my-2" style={{ width: '18rem' }}>
+              <div className="imgBox">
+                <img src="./ocko1.jpg" className="img" alt="img"/>
+              </div>
               <div className="card-body">
                 <h5 className="card-title">Ochko</h5>
-                <span className='muted'>Siberian Husky</span>
-                <span className='muted'>70 lbs, 5 years, 11 months</span>
-                 <Link href={'/contact'}
+                <span className='muted'>Siberian Husky</span><br />
+                <span className='muted'>Female, 70 lbs, 5 yrs, 11 mo</span>
+                 <Link href={'/ocko'}
                        style={{textDecoration: 'none', width: '200px'}}
                        className='btn btn-primary rounded-1 mt-4 vstack mx-auto'>
-                   See More
+                   Read More
                 </Link>
               </div>
              </div>
 
-             <div className="card" style={{ width: '18rem' }}>
-              <img src="..." class="card-img-top" alt="..."/>
+             <div className="card my-2" style={{ width: '18rem' }}>
+              <div className="imgBox">
+                <img src="./shad1.jpg" className="img" alt="img"/>
+              </div>
               <div className="card-body">
                 <h5 className="card-title">Shadow</h5>
-                <span className='muted'>Siberian Husky</span>
-                <span className='muted'>70 lbs, 4 years, 8 months</span>
-                 <Link href={'/contact'}
+                <span className='muted'>Siberian Husky</span><br />
+                <span className='muted'>Male, 70 lbs, 4 yrs, 8 mo</span>
+                 <Link href={'/shadow'}
                        style={{textDecoration: 'none', width: '200px'}}
                        className='btn btn-primary rounded-1 mt-4 vstack mx-auto'>
-                   See More
+                   Read More
                 </Link>
               </div>
              </div>
@@ -86,6 +90,26 @@ export default function Home() {
 
     <style>{`
 
+    .about {
+      position: relative;
+      width: 580px;
+      margin: 30px auto;
+    }
+
+    .img {
+      position: relative;
+      object: fit;
+      width: 100%;
+      height: 100%;
+    }
+
+    .imgBox {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      overflow: hidden;
+    }
+
       .dogs {
         position: relative;
         max-width: 37rem;
@@ -99,6 +123,16 @@ export default function Home() {
         position: relative;
         margin: 0 auto;
        }
+
+       @media (max-width: 586px) { 
+        
+        .about {
+          position: relative;
+          width: 380px;
+          margin: 30px auto;
+        }
+
+        }
     
     `}</style>
 
