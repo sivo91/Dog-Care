@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
@@ -26,14 +27,80 @@ export default function Home() {
         I am in search of a dedicated dog caregiver for my two Siberian Huskies. It&apos;s paramount that this individual is responsible and trustworthy, as these dogs are like family to me. A genuine love for animals is a must, as it&apos;s important that my dogs are treated with affection and care. Additionally, it&apos;s essential that the potential caregiver has prior experience with dogs, ensuring that they understand the unique needs and behaviors of canines. The safety and well-being of my Huskies are of utmost importance, and I am keen on finding someone who will care for them as if they were their own.
        </p>
 
+     
+       <div className="dogs">
+        
+             <div className="card" style={{ width: '18rem' }}>
+              <img src="..." class="card-img-top" alt="..."/>
+              <div className="card-body">
+                <h5 className="card-title">Ochko</h5>
+                <span className='muted'>Siberian Husky</span>
+                <span className='muted'>70 lbs, 5 years, 11 months</span>
+                 <Link href={'/contact'}
+                       style={{textDecoration: 'none', width: '200px'}}
+                       className='btn btn-primary rounded-1 mt-4 vstack mx-auto'>
+                   See More
+                </Link>
+              </div>
+             </div>
+
+             <div className="card" style={{ width: '18rem' }}>
+              <img src="..." class="card-img-top" alt="..."/>
+              <div className="card-body">
+                <h5 className="card-title">Shadow</h5>
+                <span className='muted'>Siberian Husky</span>
+                <span className='muted'>70 lbs, 4 years, 8 months</span>
+                 <Link href={'/contact'}
+                       style={{textDecoration: 'none', width: '200px'}}
+                       className='btn btn-primary rounded-1 mt-4 vstack mx-auto'>
+                   See More
+                </Link>
+              </div>
+             </div>
+       </div>
+            
+
        <Link href={'/contact'}
              style={{textDecoration: 'none', width: '200px'}}
-             className='btn btn-primary rounded-1 vstack mx-auto'>
+             className='btn btn-dark rounded-1 mt-5 vstack mx-auto'>
          Contact Us
        </Link>
 
 
+      <div className="map-container mt-5">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12539.928987270996!2d-122.1424241912177!3d38.210308858536905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80851251e474e9df%3A0x3a3658668408eea2!2sCordelia%2C%20CA%2094534!5e0!3m2!1sen!2sus!4v1696310362055!5m2!1sen!2sus"
+        width="100%"
+        height="450"
+        style={{ border: '2px solid lightgray' }}
+        allowFullScreen=""
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+        title="Google Map"
+      ></iframe>
+    </div>
+
+
     </main>
+
+
+    <style>{`
+
+      .dogs {
+        position: relative;
+        max-width: 37rem;
+        display: flex;
+        margin: 0 auto;
+        flex-wrap: wrap;
+
+      }
+    
+       .card {
+        position: relative;
+        margin: 0 auto;
+       }
+    
+    `}</style>
 
 
     </>
