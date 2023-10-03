@@ -22,7 +22,7 @@ const Register = () => {
  const myFunc = (element) => {
     if (element) {
       // Do something with the element when it receives focus
-      element.style.backgroundColor = '#f2f2f2';
+      element.style.backgroundColor = '#d0ff00';
     }
   };
 
@@ -60,6 +60,9 @@ const handleSubmit = async (e) => {
     const res = await axios.post('/api/contact', data, config);
     console.log(res.data)
     toast.success(res.data.message)
+    setSelectedAge('')
+    setName('')
+    setEmail('')
     
     setProcess(false)
    
@@ -69,7 +72,7 @@ const handleSubmit = async (e) => {
   }   
 };
 
-
+ 
  const handleRadioChange = event => {
         setSelectedValue(event.target.value);
     }
