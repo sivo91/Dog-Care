@@ -42,18 +42,25 @@ const handleLogOut = async () => {
   }
 }
 
+
+
+
+
 useEffect(() => {
-    const handleResize = () => {
-        setWindowWidth(window.innerWidth);
-    };
-    
-    window.addEventListener('resize', handleResize);
-    
-    // Cleanup the event listener when the component is unmounted
-    return () => {
-        window.removeEventListener('resize', handleResize);
-    };
+    if (typeof window !== 'undefined') {
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth);
+        };
+        
+        window.addEventListener('resize', handleResize);
+        
+        // Cleanup the event listener when the component is unmounted
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }
 }, []);
+
 
 
 
