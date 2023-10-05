@@ -96,7 +96,7 @@ useEffect(() => {
 
            
            {
-              user !== null && windowWidth < 990 && (
+              user !== null && innerWidth < 990 && (
                   <>
                       <li onClick={handleNavbar} className="nav-item">
                           <Link href={'/profile'} className="nav-link">
