@@ -1,40 +1,42 @@
-/* eslint-disable @next/next/no-script-component-in-head */
-import '../styles/globals.css'
-import Head from 'next/head';
-import React from 'react';
+import '@/styles/globals.css'
+import Layout from '../components/Layout'
 import Script from 'next/script'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { store } from '@/reduxFile/store';
+import { Provider } from 'react-redux';
+import Head from 'next/head';
+import '../styles/Home.module.css'
 
 
 
+function App({ Component, pageProps: {session, ...pageProps} }) {
 
-
-function MyApp({ Component, pageProps }) {
 
   return (
-       <>
-
-
+    <>
        <Head>
 
-     
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous"/>
-        
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossOrigin="anonymous"/>
 
-        <link rel="shortcut icon" href="/logo.png" />
+       
+      </Head>
 
-   
-        <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></Script>
           
 
-       </Head>
-       
-            <Component {...pageProps} />
-            <ToastContainer position='top-center' limit={1} /> 
+          <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossOrigin="anonymous"></Script>
+     
+        <Provider store={store}>
+          <Layout>
+                <Component {...pageProps} />
+          </Layout>
+        </Provider>
 
-       </>
+        <ToastContainer position='top-center' limit={1} /> 
+    </>
   )
 }
 
-export default MyApp
+
+
+export default App;

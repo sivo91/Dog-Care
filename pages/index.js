@@ -21,7 +21,7 @@ export default function Home() {
     <main>
 
 
-       <h3 className='text-center mt-5 mb-3'>Looking for Dog Care</h3>
+       <h3 className='text-center mt-5 mb-3'>Looking for Dog Care Giver</h3>
 
        <p className='about'>
         I am in search of a dedicated dog caregiver for my two Siberian Huskies. It&apos;s paramount that this individual is responsible and trustworthy, as these dogs are like family to me. A genuine love for animals is a must, as it&apos;s important that my dogs are treated with affection and care. Additionally, it&apos;s essential that the potential caregiver has prior experience with dogs, ensuring that they understand the unique needs and behaviors of canines. The safety and well-being of my Huskies are of utmost importance, and I am keen on finding someone who will care for them as if they were their own.
@@ -66,7 +66,7 @@ export default function Home() {
 
        <Link href={'/contact'}
              style={{textDecoration: 'none', width: '200px'}}
-             className='btn btn-dark rounded-1 mt-5 vstack mx-auto'>
+             className='btn btn-danger rounded-1 mt-5 vstack mx-auto'>
          Contact Us
        </Link>
 

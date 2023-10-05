@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Link from 'next/link';
 import axios from 'axios';
  import { toast } from 'react-toastify';
  import { useRouter } from 'next/router';
@@ -211,12 +210,6 @@ const handleSubmit = async (e) => {
 
       </form>
 
-
-      <Link href={'/'}
-            className='btn btn-primary rounded-1 vstack my-5 mx-auto'
-            style={{textDecoration: 'none', width: '200px'}}>
-        Go Back
-      </Link>
 
 
 
