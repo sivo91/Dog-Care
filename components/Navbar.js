@@ -16,8 +16,8 @@ const { user } = useSelector((state) => state.userAuth)
  const dispatch = useDispatch()
  const router = useRouter()
 
- const [windowWidth, setWindowWidth] = useState(window.innerWidth);
- //console.log(windowWidth)
+const innerWidth = typeof window !== 'undefined' ? window.innerWidth : 0;
+
 
 
  // close navbar ul
