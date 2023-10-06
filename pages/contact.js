@@ -88,7 +88,7 @@ const handleSubmit = async (e) => {
   return (
 
     <>
-      <h3 className="mt-5 text-center">Contact Form</h3>
+      <h3 className="mt-5 text-center">Application Form</h3>
       <p className='text-center lead mb-5'>
         Hoping to hear from you in the near future.
       </p>

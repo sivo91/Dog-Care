@@ -16,16 +16,12 @@ const { user } = useSelector((state) => state.userAuth)
  const dispatch = useDispatch()
  const router = useRouter()
 
-const innerWidth = typeof window !== 'undefined' ? window.innerWidth : 0;
-
-
 
  // close navbar ul
  const handleNavbar = () => {
    const navbarToggler = document.getElementById('navbarNavDropdown')
    navbarToggler.className = 'collapse navbar-collapse'
  }
-
 
 
 const handleLogOut = async () => {
@@ -42,29 +38,6 @@ const handleLogOut = async () => {
   }
 }
 
-
-
-
-
-useEffect(() => {
-    if (typeof window !== 'undefined') {
-        const handleResize = () => {
-            setWindowWidth(window.innerWidth);
-        };
-        
-        window.addEventListener('resize', handleResize);
-        
-        // Cleanup the event listener when the component is unmounted
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
-    }
-}, []);
-
-
-
-
-
   return (
     <>
       
@@ -74,8 +47,8 @@ useEffect(() => {
        
         <Link href={'/'} 
               onClick={handleNavbar}
-              className="navbar-brand">
-          Dog Care
+              className="navbar-brand fw-semibold">
+          DogSitter
         </Link>
         <button
           className="navbar-toggler"
@@ -95,38 +68,43 @@ useEffect(() => {
           <ul className="navbar-nav">
 
            
-           {
-              user !== null && innerWidth < 990 && (
-                  <>
-                      <li onClick={handleNavbar} className="nav-item">
-                          <Link href={'/profile'} className="nav-link">
-                              Profile
-                          </Link>
-                      </li>
-                  </>
-              )
-          }
+      
+          
 
             
             <li onClick={handleNavbar} className="nav-item">
-              <Link href={'/ocko'} className="nav-link">
+              <Link href={'/ocko'} className="nav-link fw-semibold">
                   Ochko
               </Link>
             </li>
 
             <li onClick={handleNavbar} className="nav-item">
-              <Link href={'/shadow'} className="nav-link">
+              <Link href={'/shadow'} className="nav-link fw-semibold">
                   Shadow
               </Link>
             </li>
 
-           
+            {
+            user !== null && (
+            <>
 
-            <li onClick={handleNavbar} className="nav-item">
-              <Link href={'/contact'} className="nav-link">
-                  Contact
-              </Link>
+             <li onClick={handleNavbar} className="nav-item">
+                <Link href={'/profile'} className="nav-link text-primary fw-semibold">
+                    Profile
+                </Link>
             </li>
+             
+              <li onClick={handleNavbar} className="nav-item">
+                <Link href={'/contact'} className="nav-link text-primary fw-semibold">
+                    Application
+                </Link>
+              </li>
+            
+            </>
+            )
+          }
+
+           
 
             {/* mobile devices */}
 
@@ -205,23 +183,13 @@ useEffect(() => {
                 ) : (
                   <> 
                       <ul className="dropdown-menu" id='menu-ul'>
-                        <li onClick={handleNavbar}>
-                          <Link href={'/profile'} className="dropdown-item">
-                            Profile
-                          </Link>
-                        </li>
-
-                        <li onClick={handleNavbar}>
-                          <Link href={'/'} className="dropdown-item">
-                            Some page here
-                          </Link>
-                        </li>
-
+                       
                         <li onClick={ () => handleLogOut()}>
                           <Link href={'/logout'}       className="dropdown-item">
                             Log Out
                           </Link>
                         </li>
+
                       </ul>
                    </>
                 )

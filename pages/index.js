@@ -1,13 +1,15 @@
 /* eslint-disable @next/next/no-img-element */
 import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
 import Link from 'next/link'
+import { useSelector } from 'react-redux'
 
-const inter = Inter({ subsets: ['latin'] })
+
 
 export default function Home() {
+
+  const { user } = useSelector((state) => state.userAuth)
+
+
   return (
     <>
       <Head>
@@ -21,12 +23,25 @@ export default function Home() {
     <main>
 
 
-       <h3 className='text-center mt-5 mb-3'>Looking for Dog Care Giver</h3>
+       <h3 className='text-center mt-5 mb-3'>Looking for DogSitter</h3>
 
        <p className='about'>
         I am in search of a dedicated dog caregiver for my two Siberian Huskies. It&apos;s paramount that this individual is responsible and trustworthy, as these dogs are like family to me. A genuine love for animals is a must, as it&apos;s important that my dogs are treated with affection and care. Additionally, it&apos;s essential that the potential caregiver has prior experience with dogs, ensuring that they understand the unique needs and behaviors of canines. The safety and well-being of my Huskies are of utmost importance, and I am keen on finding someone who will care for them as if they were their own.
        </p>
 
+
+       {
+        user === null && (
+          <>
+             <div  className='border my-3 bg-danger rounded-2 red-box-login'>
+                <h3 className='text-center text-light my-3'>
+                  Please log in to fill in application.
+                </h3>
+             l</div>
+          </>
+        )
+       }
+       
      
        <div className="dogs ">
         
@@ -64,11 +79,17 @@ export default function Home() {
        </div>
             
 
-       <Link href={'/contact'}
-             style={{textDecoration: 'none', width: '200px'}}
-             className='btn btn-danger rounded-1 mt-5 vstack mx-auto'>
-         Contact Us
-       </Link>
+       {
+        user !== null && (
+          <>
+            <Link href={'/contact'}
+                  style={{textDecoration: 'none', width: '200px'}}
+                  className='btn btn-danger rounded-1 mt-5 vstack mx-auto'>
+              Contact Us
+            </Link>
+          </>
+        )
+       }
 
 
       <div className="map-container mt-5">
@@ -89,6 +110,14 @@ export default function Home() {
 
 
     <style>{`
+
+    .red-box-login {
+      position: relative;
+      width: 380px;
+      margin: 0 auto;
+
+      box-shadow: inset 5px 5px 10px #ffffff, inset -5px -5px 10px #ffffff;
+    }
 
     .about {
       position: relative;
