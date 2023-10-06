@@ -82,11 +82,12 @@ export default function Home() {
        {
         user !== null && (
           <>
-            <Link href={'/contact'}
-                  style={{textDecoration: 'none', width: '200px'}}
-                  className='btn btn-danger rounded-1 mt-5 vstack mx-auto'>
-              Application form
-            </Link>
+          <Link href={'/contact'}
+              style={{textDecoration: 'none', width: '200px'}}
+              className='btn btn-danger rounded-1 mt-5 vstack mx-auto outside-border'>
+          Application form
+        </Link>
+
           </>
         )
        }
@@ -110,6 +111,11 @@ export default function Home() {
 
 
     <style>{`
+
+    .outside-border {
+       outline-offset: 5px;
+       outline: 2px dashed red; 
+    }
 
     .red-box-login {
       position: relative;
