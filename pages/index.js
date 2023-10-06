@@ -85,7 +85,7 @@ export default function Home() {
             <Link href={'/contact'}
                   style={{textDecoration: 'none', width: '200px'}}
                   className='btn btn-danger rounded-1 mt-5 vstack mx-auto'>
-              Contact Us
+              Application form
             </Link>
           </>
         )
