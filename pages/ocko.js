@@ -41,7 +41,7 @@ const Index = () => {
                  Nothing Interest Her more than  a Food.
               </li>
               <li>
-                 She is on a strict diet. She can only eat Ultamino kibble. Howeber, she likes obviously everything else.
+                 She is on a strict diet. She can only eat Ultamino kibble. However, she likes obviously everything else.
               </li>
               <li>
                 She needs to be watch not to eat dirt, stones or grass
