@@ -14,6 +14,7 @@ const Register = () => {
   const [process, setProcess] = useState(false)
   const [selectedAge, setSelectedAge] = useState('')
   const [experiences, setExperiences] = useState('yes')
+  const [sent, setSent] = useState(false)
 
   const data = {name, email, selectedValue, selectedAge, experiences}
 
@@ -45,7 +46,7 @@ const handleSubmit = async (e) => {
       return
     }
 
-    console.log(data)
+   
   
   // config
   const config = {
@@ -60,10 +61,10 @@ const handleSubmit = async (e) => {
     console.log(res.data)
     toast.success(res.data.message)
     setSelectedAge('')
-    setName('')
     setEmail('')
     
     setProcess(false)
+    setSent(true)
    
   } catch (error) {
     console.error('Registration failed:', error);
@@ -93,7 +94,10 @@ const handleSubmit = async (e) => {
         Hoping to hear from you in the near future.
       </p>
 
-      <form onSubmit={handleSubmit}>
+     {
+      sent === false && (
+        <>
+             <form onSubmit={handleSubmit}>
 
         <div className="mb-3">
           <label htmlFor="name" className="form-label">
@@ -208,7 +212,23 @@ const handleSubmit = async (e) => {
           { process ? 'Processing' : 'Submit'}
         </button>
 
-      </form>
+             </form>
+        </>
+      )
+     }
+
+    {
+      sent && (
+        <>
+          <form>
+          <p className='text-center'> Thank you {name}</p> 
+          <p className='text-center'>We&apos;ve Got Your Email!</p>
+          <p className='text-center'>Thanks for reaching out.</p>
+          <p className='text-center'>We&apos;ll be in touch with you shortly.</p>
+        </form>
+        </>
+      )
+    }
 
 
 

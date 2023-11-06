@@ -39,7 +39,8 @@ const Index = () => {
       <h3 className='text-center my-5'>You have been log out.</h3>
 
       <form>
-          <p className='text-center'>Thank you for visiting our website. We hope you found what you were looking for. Feel free to return anytime. Have a great day!</p>
+          <p className='text-center'>Thank you for visiting our website. Feel free to return anytime.</p>
+          <p className='text-center h5'>Ochko & Shadow</p>
       </form>
 
       <style>{`
